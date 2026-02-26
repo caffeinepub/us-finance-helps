@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 13,
+  "summary": "A US loan lending landing page named 'US Finance Helps' with 7 sections featuring brief discussions and reviews, a pastel color theme, and real affiliate/offer links gated behind a lead capture form (requiring email, first name, last name, phone number, address, city, and zip before links are revealed). The 6 affiliate offers are: 24/7 Credit Loan, Wizzay, HotLoansToday, HonestLoans, NextDayPersonalLoan, and EverdayLoans.",
+  "architectural_notes": [
+    "Page is a loan lending landing page with 7 sections, each containing discussions and reviews",
+    "Pastel color palette replaces previous green/white finance theme",
+    "Affiliate/offer links are gated behind a lead capture form; visitor must submit email, first name, last name, phone number, address, city, and zip to reveal offer links",
+    "Affiliate offer display names: link 1 = '24/7 Credit Loan (up to $5,000)', link 2 = 'Wizzay (up to $5,000)', link 5 = 'NextDayPersonalLoan', link 6 = 'EverdayLoans'"
+  ],
+  "known_issues": [
+    "App shows 'something went wrong' error on load",
+    "Only 4 of the 6 affiliate offer links are visible on the page"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-us-personal-finance-help-and-resources-application-named-us-finance-helps-the-app-should-serve-as-a-hub-for-financial-guidance-covering-topics-such-as-budgeting-saving-investing-taxes-credit-and-loans-relevant-to-us-users",
+      "title": "Create a US personal finance help and resources application named 'US Finance Helps'. The app should serve as a hub for financial guidance, covering topics such as budgeting, saving, investing, taxes, credit, and loans relevant to US users.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-professional-trustworthy-visual-theme-suited-for-a-us-finance-application-use-a-clean-modern-design-with-a-green-and-white-color-palette-evoking-money-prosperity-clear-typography-and-a-structured-layout-with-a-top-navigation-bar-hero-section-and-topic-cards-enforce-this-style-consistently-across-all-pages",
+      "title": "Apply a professional, trustworthy visual theme suited for a US finance application. Use a clean, modern design with a green and white color palette (evoking money/prosperity), clear typography, and a structured layout with a top navigation bar, hero section, and topic cards. Enforce this style consistently across all pages.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-us-finance-helps-as-the-project-domain-name-throughout-the-app-including-the-page-title-browser-tab-title-logo-wordmark-in-the-header-and-any-metadata",
+      "title": "Use 'US Finance Helps' as the project/domain name throughout the app — including the page title, browser tab title, logo/wordmark in the header, and any metadata.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-discussion-reviews-subsection-to-each-of-the-7-finance-category-sections-budgeting-saving-investing-taxes-credit-loans-and-any-remaining-category-each-subsection-should-display-2-3-brief-user-review-cards-with-a-star-rating-1-5-a-short-review-text-1-3-sentences-and-a-reviewer-first-name-initial-include-a-short-editorial-discussion-paragraph-3-5-sentences-above-the-review-cards-summarizing-the-topic-s-relevance-to-us-borrowers-and-consumers",
+      "title": "Add a 'Discussion & Reviews' subsection to each of the 7 finance category sections (Budgeting, Saving, Investing, Taxes, Credit, Loans, and any remaining category). Each subsection should display 2–3 brief user review cards with a star rating (1–5), a short review text (1–3 sentences), and a reviewer first name/initial. Include a short editorial discussion paragraph (3–5 sentences) above the review cards summarizing the topic's relevance to US borrowers and consumers.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-green-and-white-color-theme-with-a-pastel-color-palette-across-the-entire-application-use-soft-pastel-tones-e-g-pastel-mint-pastel-lavender-pastel-peach-pastel-sky-blue-for-backgrounds-cards-badges-buttons-and-accent-elements-update-all-css-custom-properties-in-frontend-src-index-css-and-frontend-index-css-accordingly-and-adjust-the-tailwind-config-to-use-the-new-pastel-color-tokens-ensure-sufficient-contrast-for-readable-text-throughout",
+      "title": "Replace the current green-and-white color theme with a pastel color palette across the entire application. Use soft pastel tones (e.g., pastel mint, pastel lavender, pastel peach, pastel sky blue) for backgrounds, cards, badges, buttons, and accent elements. Update all CSS custom properties in frontend/src/index.css and frontend/index.css accordingly, and adjust the Tailwind config to use the new pastel color tokens. Ensure sufficient contrast for readable text throughout.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-loan-offer-affiliate-link-sections-throughout-the-page-to-support-its-purpose-as-a-loan-lending-landing-page-in-each-of-the-7-category-sections-include-at-least-2-featured-loan-or-financial-product-offer-cards-each-offer-card-should-display-a-lender-product-name-a-brief-offer-description-e-g-apr-as-low-as-5-99-no-origination-fee-a-cta-button-labeled-check-my-rate-or-apply-now-that-links-to-a-representative-external-url-use-placeholder-urls-like-https-example-com-offer-and-a-sponsored-or-partner-offer-badge-also-add-a-prominent-top-loan-offers-banner-section-on-the-homepage-hero-area-with-3-4-highlighted-offers",
+      "title": "Add loan offer/affiliate link sections throughout the page to support its purpose as a loan lending landing page. In each of the 7 category sections, include at least 2 featured loan or financial product offer cards. Each offer card should display: a lender/product name, a brief offer description (e.g., 'APR as low as 5.99%', 'No origination fee'), a CTA button labeled 'Check My Rate' or 'Apply Now' that links to a representative external URL (use placeholder URLs like https://example.com/offer), and a 'Sponsored' or 'Partner Offer' badge. Also add a prominent 'Top Loan Offers' banner section on the HomePage hero area with 3–4 highlighted offers.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-placeholder-example-affiliate-urls-in-loanoffersdata-ts-and-toploanoffersbanner-with-the-following-6-real-affiliate-links-distributed-across-the-offer-cards-throughout-the-page-1-https-cd-leadfinv-com-a-294697-c-294173-co-358739-mt-5-2-https-cd-leadfinv-com-a-294697-c-373383-co-358739-mt-5-3-https-www-hotloanstoday-com-id-vmwpxikbq9dh2qsdijntlikiwmcf00oxn-523fdhkcm-subid-sub-id-value-subid2-sub-id2-value-subid3-clickid-firstname-firstname-lastname-lastname-email-email-4-https-www-honestloans-net-id-vmwpxikbq9dh2qsdijntlikiwmcf00oxn-523fdhkcm-subid-sub-id-value-subid2-sub-id2-value-subid3-clickid-firstname-firstname-lastname-lastname-email-email-5-https-wedebeek-com-click-pid-13236-offer-id-20435-6-https-wedebeek-com-click-pid-13236-offer-id-20370-for-the-hotloanstoday-and-honestloans-urls-dynamically-substitute-firstname-lastname-and-email-tokens-with-the-actual-values-the-user-entered-in-the-lead-capture-form-before-navigating-to-those-urls",
+      "title": "Replace all placeholder/example affiliate URLs in loanOffersData.ts and TopLoanOffersBanner with the following 6 real affiliate links, distributed across the offer cards throughout the page:\n1. https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5\n2. https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5\n3. https://www.hotloanstoday.com?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email]\n4. https://www.honestloans.net?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email]\n5. https://wedebeek.com/click?pid=13236&offer_id=20435\n6. https://wedebeek.com/click?pid=13236&offer_id=20370\nFor the hotloanstoday and honestloans URLs, dynamically substitute [firstName], [lastName], and [email] tokens with the actual values the user entered in the lead capture form before navigating to those URLs.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-gate-all-affiliate-offer-links-including-those-in-loanoffercard-ctas-toploanoffersbanner-and-any-other-sections-so-they-are-completely-hidden-from-visitors-until-the-visitor-submits-a-lead-capture-form-the-form-must-collect-all-of-the-following-fields-all-required-first-name-last-name-email-address-phone-number-street-address-city-and-zip-code-only-after-successful-submission-of-all-7-fields-should-the-affiliate-offer-links-become-visible-and-clickable-the-lead-form-should-be-prominently-displayed-e-g-as-a-modal-inline-gate-or-hero-section-form-and-clearly-communicate-that-filling-it-out-unlocks-the-best-loan-offers",
+      "title": "Gate all affiliate/offer links (including those in LoanOfferCard CTAs, TopLoanOffersBanner, and any other sections) so they are completely hidden from visitors until the visitor submits a lead capture form. The form must collect all of the following fields, all required: First Name, Last Name, Email Address, Phone Number, Street Address, City, and ZIP Code. Only after successful submission of all 7 fields should the affiliate offer links become visible and clickable. The lead form should be prominently displayed — e.g., as a modal, inline gate, or hero section form — and clearly communicate that filling it out unlocks the best loan offers.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-investigate-and-fix-the-runtime-error-that-causes-the-app-to-display-a-something-went-wrong-error-screen-on-initial-load-check-for-issues-in-app-tsx-route-configuration-leadcapturecontext-provider-setup-tanstack-router-initialization-and-any-unhandled-promise-rejections-or-missing-error-boundaries-ensure-the-app-loads-successfully-without-errors-for-unauthenticated-visitors",
+      "title": "Investigate and fix the runtime error that causes the app to display a 'something went wrong' error screen on initial load. Check for issues in App.tsx route configuration, LeadCaptureContext provider setup, TanStack Router initialization, and any unhandled promise rejections or missing error boundaries. Ensure the app loads successfully without errors for unauthenticated visitors.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-top-level-react-error-boundary-component-in-app-tsx-that-catches-rendering-errors-gracefully-and-displays-a-user-friendly-fallback-ui-e-g-we-encountered-an-issue-please-refresh-the-page-instead-of-a-blank-or-broken-screen-to-prevent-future-unhandled-errors-from-breaking-the-entire-app",
+      "title": "Add a top-level React error boundary component in App.tsx that catches rendering errors gracefully and displays a user-friendly fallback UI (e.g., 'We encountered an issue. Please refresh the page.') instead of a blank or broken screen, to prevent future unhandled errors from breaking the entire app.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-frontend-src-data-loanoffersdata-ts-and-frontend-src-components-toploanoffersbanner-tsx-to-ensure-all-6-real-affiliate-links-are-assigned-to-offer-cards-and-are-rendered-on-the-page-the-6-links-are-1-https-cd-leadfinv-com-a-294697-c-294173-co-358739-mt-5-2-https-cd-leadfinv-com-a-294697-c-373383-co-358739-mt-5-3-https-www-hotloanstoday-com-id-vmwpxikbq9dh2qsdijntlikiwmcf00oxn-523fdhkcm-subid-sub-id-value-subid2-sub-id2-value-subid3-clickid-firstname-firstname-lastname-lastname-email-email-4-https-www-honestloans-net-id-vmwpxikbq9dh2qsdijntlikiwmcf00oxn-523fdhkcm-subid-sub-id-value-subid2-sub-id2-value-subid3-clickid-firstname-firstname-lastname-lastname-email-email-5-https-wedebeek-com-click-pid-13236-offer-id-20435-6-https-wedebeek-com-click-pid-13236-offer-id-20370-if-any-of-these-6-links-are-missing-from-offer-cards-add-or-reassign-offer-cards-so-that-every-one-of-the-6-links-appears-at-least-once-somewhere-on-the-page-distributed-across-the-toploanoffersbanner-and-or-category-loan-offer-sections-links-3-and-4-must-continue-to-have-firstname-lastname-and-email-tokens-dynamically-substituted-via-affiliateurlbuilder-ts-using-the-submitted-lead-form-data",
+      "title": "Audit `frontend/src/data/loanOffersData.ts` and `frontend/src/components/TopLoanOffersBanner.tsx` to ensure all 6 real affiliate links are assigned to offer cards and are rendered on the page. The 6 links are: (1) https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5, (2) https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5, (3) https://www.hotloanstoday.com?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email], (4) https://www.honestloans.net?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email], (5) https://wedebeek.com/click?pid=13236&offer_id=20435, (6) https://wedebeek.com/click?pid=13236&offer_id=20370. If any of these 6 links are missing from offer cards, add or reassign offer cards so that every one of the 6 links appears at least once somewhere on the page — distributed across the TopLoanOffersBanner and/or category loan offer sections. Links (3) and (4) must continue to have [firstName], [lastName], and [email] tokens dynamically substituted via `affiliateUrlBuilder.ts` using the submitted lead form data.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-display-names-of-all-6-loan-offer-cards-in-frontend-src-data-loanoffersdata-ts-and-frontend-src-components-toploanoffersbanner-tsx-to-match-their-real-lender-brand-names-as-follows-1-https-cd-leadfinv-com-a-294697-c-294173-co-358739-mt-5-display-name-24-7-credit-loan-up-to-5-000-2-https-cd-leadfinv-com-a-294697-c-373383-co-358739-mt-5-display-name-wizzay-up-to-5-000-3-https-www-hotloanstoday-com-id-vmwpxikbq9dh2qsdijntlikiwmcf00oxn-523fdhkcm-subid-sub-id-value-subid2-sub-id2-value-subid3-clickid-firstname-firstname-lastname-lastname-email-email-display-name-hot-loans-today-4-https-www-honestloans-net-id-vmwpxikbq9dh2qsdijntlikiwmcf00oxn-523fdhkcm-subid-sub-id-value-subid2-sub-id2-value-subid3-clickid-firstname-firstname-lastname-lastname-email-email-display-name-honest-loans-5-https-wedebeek-com-click-pid-13236-offer-id-20435-display-name-nextdaypersonalloan-6-https-wedebeek-com-click-pid-13236-offer-id-20370-display-name-everdayloans-ensure-all-6-offers-are-still-distributed-across-the-toploanoffersbanner-and-category-loan-offer-sections-and-that-offers-3-and-4-continue-to-have-firstname-lastname-and-email-tokens-substituted-via-affiliateurlbuilder-ts",
+      "title": "Update the display names of all 6 loan offer cards in `frontend/src/data/loanOffersData.ts` and `frontend/src/components/TopLoanOffersBanner.tsx` to match their real lender brand names as follows: (1) https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 → display name '24/7 Credit Loan (up to $5,000)'; (2) https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 → display name 'Wizzay (up to $5,000)'; (3) https://www.hotloanstoday.com?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] → display name 'Hot Loans Today'; (4) https://www.honestloans.net?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] → display name 'Honest Loans'; (5) https://wedebeek.com/click?pid=13236&offer_id=20435 → display name 'NextDayPersonalLoan'; (6) https://wedebeek.com/click?pid=13236&offer_id=20370 → display name 'EverdayLoans'. Ensure all 6 offers are still distributed across the TopLoanOffersBanner and category loan offer sections, and that offers (3) and (4) continue to have [firstName], [lastName], and [email] tokens substituted via `affiliateUrlBuilder.ts`.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add brief discussions and user reviews in all 7 sections of the page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Apply a pastel color theme across the entire web page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add 6 real affiliate/offer links and gate them behind a lead capture form requiring email, first name, last name, phone number, address, city, and zip",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Ensure all 6 affiliate offer links are visible/displayed on the page (currently only 4 are showing)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "US Finance Helps",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

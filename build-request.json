@@ -1,0 +1,48 @@
+{
+  "kind": "build_request",
+  "title": "Update offer card names to match real affiliate lender brands",
+  "projectName": "US Finance Helps",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Update the display names of all 6 loan offer cards in `frontend/src/data/loanOffersData.ts` and `frontend/src/components/TopLoanOffersBanner.tsx` to match their real lender brand names as follows: (1) https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 → display name '24/7 Credit Loan (up to $5,000)'; (2) https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 → display name 'Wizzay (up to $5,000)'; (3) https://www.hotloanstoday.com?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] → display name 'Hot Loans Today'; (4) https://www.honestloans.net?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] → display name 'Honest Loans'; (5) https://wedebeek.com/click?pid=13236&offer_id=20435 → display name 'NextDayPersonalLoan'; (6) https://wedebeek.com/click?pid=13236&offer_id=20370 → display name 'EverdayLoans'. Ensure all 6 offers are still distributed across the TopLoanOffersBanner and category loan offer sections, and that offers (3) and (4) continue to have [firstName], [lastName], and [email] tokens substituted via `affiliateUrlBuilder.ts`.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 (24/7 Credit Loan (up to $5,000)",
+          "https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 (Wizzay (up to $5,000))",
+          "https://wedebeek.com/click?pid=13236&offer_id=20435 (NextDayPersonalLoan)",
+          "https://wedebeek.com/click?pid=13236&offer_id=20370 (EverdayLoans)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The offer card linked to https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 displays the name '24/7 Credit Loan (up to $5,000)'.",
+        "The offer card linked to https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 displays the name 'Wizzay (up to $5,000)'.",
+        "The offer card linked to the hotloanstoday.com URL displays the name 'Hot Loans Today'.",
+        "The offer card linked to the honestloans.net URL displays the name 'Honest Loans'.",
+        "The offer card linked to https://wedebeek.com/click?pid=13236&offer_id=20435 displays the name 'NextDayPersonalLoan'.",
+        "The offer card linked to https://wedebeek.com/click?pid=13236&offer_id=20370 displays the name 'EverdayLoans'.",
+        "All 6 offer cards remain visible on the page (in TopLoanOffersBanner and/or category sections) after lead capture.",
+        "Links (3) and (4) still have [firstName], [lastName], and [email] tokens dynamically substituted via affiliateUrlBuilder.ts using submitted lead form data."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the affiliate URLs themselves — only update the display/lender names.",
+    "Do not remove or break the dynamic token substitution for hotloanstoday.com and honestloans.net URLs.",
+    "Do not modify files listed in frontend.immutablePaths."
+  ],
+  "nonGoals": [
+    "Adding new offer cards or affiliate links beyond the existing 6.",
+    "Changing the lead capture form fields or gating logic.",
+    "Modifying the pastel color theme or layout."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

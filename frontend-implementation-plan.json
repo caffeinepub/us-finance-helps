@@ -1,0 +1,33 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Update offer card names to match real affiliate lender brands",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Update the display names of all 6 loan offer cards in loanOffersData.ts and TopLoanOffersBanner.tsx to match real lender brand names, ensuring all offers remain visible and token substitution continues to work for hotloanstoday.com and honestloans.net URLs",
+      "acceptanceCriteria": [
+        "The offer card linked to https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 displays the name '24/7 Credit Loan (up to $5,000)'.",
+        "The offer card linked to https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 displays the name 'Wizzay (up to $5,000)'.",
+        "The offer card linked to the hotloanstoday.com URL displays the name 'Hot Loans Today'.",
+        "The offer card linked to the honestloans.net URL displays the name 'Honest Loans'.",
+        "The offer card linked to https://wedebeek.com/click?pid=13236&offer_id=20435 displays the name 'NextDayPersonalLoan'.",
+        "The offer card linked to https://wedebeek.com/click?pid=13236&offer_id=20370 displays the name 'EverdayLoans'.",
+        "All 6 offer cards remain visible on the page (in TopLoanOffersBanner and/or category sections) after lead capture.",
+        "Links (3) and (4) still have [firstName], [lastName], and [email] tokens dynamically substituted via affiliateUrlBuilder.ts using submitted lead form data."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/loanOffersData.ts",
+          "operation": "modify",
+          "description": "Update the lender names for all 6 loan offers in the loanOffersByCategory map to match their real brand names: (1) change the offer linked to https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 to display '24/7 Credit Loan (up to $5,000)'; (2) change the offer linked to https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 to display 'Wizzay (up to $5,000)'; (3) change the offer with the hotloanstoday.com URL to display 'Hot Loans Today'; (4) change the offer with the honestloans.net URL to display 'Honest Loans'; (5) change the offer linked to https://wedebeek.com/click?pid=13236&offer_id=20435 to display 'NextDayPersonalLoan'; (6) change the offer linked to https://wedebeek.com/click?pid=13236&offer_id=20370 to display 'EverdayLoans'. Do not modify the affiliate URLs themselves or remove any offers. Ensure the hotloanstoday.com and honestloans.net URLs retain their [firstName], [lastName], and [email] token placeholders for dynamic substitution."
+        },
+        {
+          "path": "frontend/src/components/TopLoanOffersBanner.tsx",
+          "operation": "modify",
+          "description": "Update the lender names displayed in the top loan offers banner to reflect the new brand names from loanOffersData.ts. Ensure all 6 offers continue to be shown and that the component correctly passes affiliate URLs with token placeholders to the affiliateUrlBuilder utility for offers (3) and (4). Verify that the banner renders all offers properly whether the lead is captured or not."
+        }
+      ]
+    }
+  ]
+}

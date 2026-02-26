@@ -1,0 +1,38 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T20:45:58.185Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-12",
+        "summary": "Update the display names of all 6 loan offer cards in `frontend/src/data/loanOffersData.ts` and `frontend/src/components/TopLoanOffersBanner.tsx` to match their real lender brand names as follows: (1) https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 → display name '24/7 Credit Loan (up to $5,000)'; (2) https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 → display name 'Wizzay (up to $5,000)'; (3) https://www.hotloanstoday.com?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] → display name 'Hot Loans Today'; (4) https://www.honestloans.net?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] → display name 'Honest Loans'; (5) https://wedebeek.com/click?pid=13236&offer_id=20435 → display name 'NextDayPersonalLoan'; (6) https://wedebeek.com/click?pid=13236&offer_id=20370 → display name 'EverdayLoans'. Ensure all 6 offers are still distributed across the TopLoanOffersBanner and category loan offer sections, and that offers (3) and (4) continue to have [firstName], [lastName], and [email] tokens substituted via `affiliateUrlBuilder.ts`.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/data/loanOffersData.ts",
+          "frontend/src/components/TopLoanOffersBanner.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/data/loanOffersData.ts"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/data/loanOffersData.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

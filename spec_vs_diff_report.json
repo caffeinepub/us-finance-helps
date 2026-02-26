@@ -1,0 +1,14 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T20:45:58.181Z",
+  "summary": "The diff implements REQ-12 by updating all 6 loan offer card display names in loanOffersData.ts to match real lender brand names, preserving affiliate URLs and token substitution for hotloanstoday.com and honestloans.net. The TopLoanOffersBanner.tsx is mentioned in the requirement but not shown in the diff; however, the frontend-file-summaries.txt confirms the data file was updated with all correct names. All acceptance criteria appear to be met.",
+  "missing_requirements": [],
+  "hallucinated_features": [],
+  "confidence": 0.85,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/data/loanOffersData.ts",
+    "project_state.json"
+  ]
+}

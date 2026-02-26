@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+
+        /* Pastel Finance Theme */
+        --background: 0.98 0.008 280;
+        --foreground: 0.22 0.04 260;
+
+        --card: 1 0 0;
+        --card-foreground: 0.22 0.04 260;
+
+        --popover: 1 0 0;
+        --popover-foreground: 0.22 0.04 260;
+
+        /* Primary: Pastel Lavender-Blue */
+        --primary: 0.52 0.14 265;
+        --primary-foreground: 0.99 0 0;
+
+        /* Secondary: Pastel Mint */
+        --secondary: 0.93 0.04 165;
+        --secondary-foreground: 0.28 0.08 165;
+
+        --muted: 0.95 0.012 280;
+        --muted-foreground: 0.52 0.04 265;
+
+        /* Accent: Pastel Peach */
+        --accent: 0.94 0.05 55;
+        --accent-foreground: 0.32 0.1 40;
+
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+
+        --border: 0.90 0.02 280;
+        --input: 0.90 0.02 280;
+        --ring: 0.52 0.14 265;
+
+        --chart-1: 0.62 0.16 265;
+        --chart-2: 0.68 0.14 165;
+        --chart-3: 0.72 0.12 55;
+        --chart-4: 0.65 0.14 320;
+        --chart-5: 0.60 0.12 200;
+
+        --sidebar: 0.96 0.01 280;
+        --sidebar-foreground: 0.22 0.04 260;
+        --sidebar-primary: 0.52 0.14 265;
+        --sidebar-primary-foreground: 0.99 0 0;
+        --sidebar-accent: 0.94 0.05 55;
+        --sidebar-accent-foreground: 0.32 0.1 40;
+        --sidebar-border: 0.90 0.02 280;
+        --sidebar-ring: 0.52 0.14 265;
+
+        /* Custom pastel finance tokens */
+        --pastel-lavender: 0.88 0.06 280;
+        --pastel-mint: 0.90 0.06 165;
+        --pastel-peach: 0.93 0.06 55;
+        --pastel-sky: 0.90 0.06 220;
+        --pastel-rose: 0.92 0.05 350;
+        --pastel-gold: 0.88 0.08 85;
+
+        /* Header/Footer deep color */
+        --brand-deep: 0.40 0.14 265;
+        --brand-mid: 0.55 0.16 265;
+    }
+
+    .dark {
+        --background: 0.14 0.04 265;
+        --foreground: 0.95 0.02 280;
+
+        --card: 0.19 0.05 265;
+        --card-foreground: 0.95 0.02 280;
+
+        --popover: 0.22 0.05 265;
+        --popover-foreground: 0.95 0.02 280;
+
+        --primary: 0.72 0.14 265;
+        --primary-foreground: 0.12 0.04 265;
+
+        --secondary: 0.28 0.06 165;
+        --secondary-foreground: 0.90 0.04 165;
+
+        --muted: 0.25 0.05 265;
+        --muted-foreground: 0.65 0.04 280;
+
+        --accent: 0.32 0.08 55;
+        --accent-foreground: 0.92 0.04 55;
+
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.205 0 0;
+
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.72 0.14 265;
+
+        --chart-1: 0.72 0.16 265;
+        --chart-2: 0.68 0.14 165;
+        --chart-3: 0.72 0.12 55;
+        --chart-4: 0.65 0.14 320;
+        --chart-5: 0.60 0.12 200;
+
+        --sidebar: 0.19 0.05 265;
+        --sidebar-foreground: 0.95 0.02 280;
+        --sidebar-primary: 0.72 0.14 265;
+        --sidebar-primary-foreground: 0.12 0.04 265;
+        --sidebar-accent: 0.32 0.08 55;
+        --sidebar-accent-foreground: 0.92 0.04 55;
+        --sidebar-border: 1 0 0 / 10%;
+        --sidebar-ring: 0.72 0.14 265;
+
+        --pastel-lavender: 0.30 0.08 280;
+        --pastel-mint: 0.28 0.07 165;
+        --pastel-peach: 0.30 0.07 55;
+        --pastel-sky: 0.28 0.07 220;
+        --pastel-rose: 0.28 0.06 350;
+        --pastel-gold: 0.30 0.08 85;
+
+        --brand-deep: 0.40 0.14 265;
+        --brand-mid: 0.55 0.16 265;
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Merriweather', Georgia, serif;
+    }
+}
