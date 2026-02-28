@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 13,
+  "projectStateVersion": 15,
   "summary": "A US loan lending landing page named 'US Finance Helps' with 7 sections featuring brief discussions and reviews, a pastel color theme, and real affiliate/offer links gated behind a lead capture form (requiring email, first name, last name, phone number, address, city, and zip before links are revealed). The 6 affiliate offers are: 24/7 Credit Loan, Wizzay, HotLoansToday, HonestLoans, NextDayPersonalLoan, and EverdayLoans.",
   "architectural_notes": [
     "Page is a loan lending landing page with 7 sections, each containing discussions and reviews",
@@ -12,7 +12,7 @@
     "App shows 'something went wrong' error on load",
     "Only 4 of the 6 affiliate offer links are visible on the page"
   ],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-create-a-us-personal-finance-help-and-resources-application-named-us-finance-helps-the-app-should-serve-as-a-hub-for-financial-guidance-covering-topics-such-as-budgeting-saving-investing-taxes-credit-and-loans-relevant-to-us-users",
@@ -134,6 +134,14 @@
       "id": "AR-5",
       "summary": "Ensure all 6 affiliate offer links are visible/displayed on the page (currently only 4 are showing)",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Audit `frontend/src/data/loanOffersData.ts` and `frontend/src/components/TopLoanOffersBanner.tsx` to confirm all 6 real affiliate links are assigned to offer cards and rendered on the page. The 6 links are: (1) https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 — display name '24/7 Credit Loan (up to $5,000)'; (2) https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 — display name 'Wizzay (up to $5,000)'; (3) https://www.hotloanstoday.com?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] — display name 'Hot Loans Today'; (4) https://www.honestloans.net?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email] — display name 'Honest Loans'; (5) https://wedebeek.com/click?pid=13236&offer_id=20435 — display name 'NextDayPersonalLoan'; (6) https://wedebeek.com/click?pid=13236&offer_id=20370 — display name 'EverdayLoans'. If any of these 6 links are missing, add or reassign offer cards so that every link appears at least once — distributed across the TopLoanOffersBanner and/or category loan offer sections. Links (3) and (4) must have [firstName], [lastName], and [email] tokens dynamically substituted via `affiliateUrlBuilder.ts` using the submitted lead form data.",
+      "reqIds": [
+        "REQ-13"
+      ],
       "status": "pending"
     }
   ],

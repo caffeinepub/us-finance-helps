@@ -1,14 +1,21 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-26T20:45:58.181Z",
-  "summary": "The diff implements REQ-12 by updating all 6 loan offer card display names in loanOffersData.ts to match real lender brand names, preserving affiliate URLs and token substitution for hotloanstoday.com and honestloans.net. The TopLoanOffersBanner.tsx is mentioned in the requirement but not shown in the diff; however, the frontend-file-summaries.txt confirms the data file was updated with all correct names. All acceptance criteria appear to be met.",
-  "missing_requirements": [],
+  "generatedAt": "2026-02-28T05:02:50.104Z",
+  "summary": "The diff only modifies `project_state.json` (a metadata/state tracking file) and does not touch any of the actual source files required by REQ-13. None of the acceptance criteria for REQ-13 are implemented in the diff: no changes to `frontend/src/data/loanOffersData.ts`, `frontend/src/components/TopLoanOffersBanner.tsx`, or `frontend/src/utils/affiliateUrlBuilder.ts` are present.",
+  "missing_requirements": [
+    {
+      "id": "REQ-13",
+      "requirement": "Audit and update `frontend/src/data/loanOffersData.ts` and `frontend/src/components/TopLoanOffersBanner.tsx` to ensure all 6 affiliate offer links are assigned to offer cards and rendered on the page, with correct brand names, dynamic token substitution via affiliateUrlBuilder.ts for links (3) and (4), and proper gating behavior.",
+      "reason": "The diff only modifies `project_state.json`. No changes were made to `loanOffersData.ts`, `TopLoanOffersBanner.tsx`, or `affiliateUrlBuilder.ts`. None of the 6 affiliate URLs, brand names, token substitution logic, or gating behavior were implemented.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
   "hallucinated_features": [],
-  "confidence": 0.85,
+  "confidence": 0.97,
   "changed_files": [
-    "frontend-file-summaries.txt",
-    "frontend/src/data/loanOffersData.ts",
     "project_state.json"
   ]
 }

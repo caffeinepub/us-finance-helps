@@ -1,31 +1,43 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update offer card names to match real affiliate lender brands",
+  "title": "Ensure all 6 affiliate offer links are present and visible after lead capture",
   "requirements": [
     {
-      "id": "REQ-12",
-      "summary": "Update the display names of all 6 loan offer cards in loanOffersData.ts and TopLoanOffersBanner.tsx to match real lender brand names, ensuring all offers remain visible and token substitution continues to work for hotloanstoday.com and honestloans.net URLs",
+      "id": "REQ-13",
+      "summary": "Audit and update loanOffersData.ts and TopLoanOffersBanner.tsx to ensure all 6 real affiliate links are assigned to offer cards with correct display names, dynamic token substitution for links (3) and (4), and proper visibility gating after lead capture form submission",
       "acceptanceCriteria": [
-        "The offer card linked to https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 displays the name '24/7 Credit Loan (up to $5,000)'.",
-        "The offer card linked to https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 displays the name 'Wizzay (up to $5,000)'.",
-        "The offer card linked to the hotloanstoday.com URL displays the name 'Hot Loans Today'.",
-        "The offer card linked to the honestloans.net URL displays the name 'Honest Loans'.",
-        "The offer card linked to https://wedebeek.com/click?pid=13236&offer_id=20435 displays the name 'NextDayPersonalLoan'.",
-        "The offer card linked to https://wedebeek.com/click?pid=13236&offer_id=20370 displays the name 'EverdayLoans'.",
-        "All 6 offer cards remain visible on the page (in TopLoanOffersBanner and/or category sections) after lead capture.",
-        "Links (3) and (4) still have [firstName], [lastName], and [email] tokens dynamically substituted via affiliateUrlBuilder.ts using submitted lead form data."
+        "All 6 affiliate offer links appear at least once somewhere on the page after the lead capture form is submitted.",
+        "Each offer card displays the correct real lender brand name: '24/7 Credit Loan (up to $5,000)', 'Wizzay (up to $5,000)', 'Hot Loans Today', 'Honest Loans', 'NextDayPersonalLoan', 'EverdayLoans'.",
+        "Offer cards for Hot Loans Today and Honest Loans have [firstName], [lastName], and [email] tokens replaced with the actual lead form values via affiliateUrlBuilder.ts.",
+        "Affiliate links remain gated (hidden/blurred) until the lead capture form with all 7 fields is submitted.",
+        "After form submission, all 6 offer CTA buttons are clickable and navigate to the correct URLs."
       ],
       "file_operations": [
         {
           "path": "frontend/src/data/loanOffersData.ts",
           "operation": "modify",
-          "description": "Update the lender names for all 6 loan offers in the loanOffersByCategory map to match their real brand names: (1) change the offer linked to https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5 to display '24/7 Credit Loan (up to $5,000)'; (2) change the offer linked to https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5 to display 'Wizzay (up to $5,000)'; (3) change the offer with the hotloanstoday.com URL to display 'Hot Loans Today'; (4) change the offer with the honestloans.net URL to display 'Honest Loans'; (5) change the offer linked to https://wedebeek.com/click?pid=13236&offer_id=20435 to display 'NextDayPersonalLoan'; (6) change the offer linked to https://wedebeek.com/click?pid=13236&offer_id=20370 to display 'EverdayLoans'. Do not modify the affiliate URLs themselves or remove any offers. Ensure the hotloanstoday.com and honestloans.net URLs retain their [firstName], [lastName], and [email] token placeholders for dynamic substitution."
+          "description": "Audit the existing LoanOffer entries mapped by ResourceCategory and ensure all 6 affiliate links are present with correct URLs and display names. Add or update entries to include: (1) '24/7 Credit Loan (up to $5,000)' with URL https://cd.leadfinv.com/?a=294697&c=294173&co=358739&mt=5; (2) 'Wizzay (up to $5,000)' with URL https://cd.leadfinv.com/?a=294697&c=373383&co=358739&mt=5; (3) 'Hot Loans Today' with URL https://www.hotloanstoday.com?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email]; (4) 'Honest Loans' with URL https://www.honestloans.net?id=vMWPxIKBq9DH2QsDiJNtlIkIwmcF00oXN-523fdHkCM.&subId=[SUB_ID_VALUE]&subId2=[SUB_ID2_VALUE]&subId3=[clickId]&firstName=[firstName]&lastName=[lastName]&email=[email]; (5) 'NextDayPersonalLoan' with URL https://wedebeek.com/click?pid=13236&offer_id=20435; (6) 'EverdayLoans' with URL https://wedebeek.com/click?pid=13236&offer_id=20370. Distribute these 6 offers across appropriate ResourceCategory keys (e.g., loans, budgeting, credit) so they appear in TopLoanOffersBanner and category-specific LoanOffersSection components. Ensure the LoanOffer interface includes fields for lenderName, url, apr, badge, and any other required metadata."
         },
         {
           "path": "frontend/src/components/TopLoanOffersBanner.tsx",
           "operation": "modify",
-          "description": "Update the lender names displayed in the top loan offers banner to reflect the new brand names from loanOffersData.ts. Ensure all 6 offers continue to be shown and that the component correctly passes affiliate URLs with token placeholders to the affiliateUrlBuilder utility for offers (3) and (4). Verify that the banner renders all offers properly whether the lead is captured or not."
+          "description": "Review the component to confirm it renders loan offer cards using data from loanOffersData.ts and correctly gates the affiliate links behind the lead capture modal. Ensure that when isLeadCaptured is true, all 6 offer cards are visible and their CTA buttons link to the correct affiliate URLs. Verify that the component passes lead form data (firstName, lastName, email) from LeadCaptureContext to affiliateUrlBuilder.ts for dynamic token substitution in URLs (3) and (4). If any of the 6 offers are missing from the rendered output, update the component logic or data source references to include them. Ensure the lock overlay/blur effect is removed after lead submission."
+        },
+        {
+          "path": "frontend/src/components/LoanOfferCard.tsx",
+          "operation": "modify",
+          "description": "Verify that the LoanOfferCard component correctly receives lenderName and url props, and applies the affiliateUrlBuilder utility to substitute [firstName], [lastName], and [email] tokens when rendering the CTA link. Ensure the card displays the lender brand name (e.g., '24/7 Credit Loan (up to $5,000)', 'Hot Loans Today') and that the link is clickable only after isLeadCaptured is true. If token substitution is not yet integrated, add logic to import and call affiliateUrlBuilder with the leadData from useLeadCapture before setting the href attribute."
+        },
+        {
+          "path": "frontend/src/utils/affiliateUrlBuilder.ts",
+          "operation": "modify",
+          "description": "Ensure the utility function correctly replaces [firstName], [lastName], and [email] placeholders in affiliate URLs with URL-encoded values from the submitted lead form data. Test that the function handles both URLs (3) and (4) which contain these tokens, and that it returns the original URL unchanged if no tokens are present. Add type safety and validation to prevent runtime errors if leadData fields are missing."
+        },
+        {
+          "path": "frontend/src/components/LoanOffersSection.tsx",
+          "operation": "modify",
+          "description": "Audit the LoanOffersSection component to confirm it renders offer cards for the given ResourceCategory and that all 6 affiliate links appear across the various category pages. Ensure the component integrates with LeadCaptureContext to gate affiliate links behind the lead capture modal, showing the lock notice when isLeadCaptured is false and rendering clickable offer cards with dynamic token substitution when isLeadCaptured is true. Verify that the section pulls offers from loanOffersData.ts and passes leadData to each LoanOfferCard for URL token replacement."
         }
       ]
     }
